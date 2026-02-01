@@ -11,7 +11,7 @@ function help() {
         document.getElementById("helpbutton").value= "Help ?";
         helpbool = false;
     } else {
-        document.getElementById("helpdiv").innerHTML = '<p>Click on refresh to get started</p><p>Click on "+" to create a new task</p><p>click on a task (or checkbox) to mark it has "completed"</p><p> Middle click a task (text only) to delete it</p>';
+        document.getElementById("helpdiv").innerHTML = '<p>Click on refresh to get started</p><p>Click on "+" to create a new task</p><p>click on a task (or checkbox) to mark it has "completed"</p><p> Middle click a task to delete it</p>';
         document.getElementById("helpbutton").value = "Close";
         helpbool = true;
     }
@@ -75,7 +75,7 @@ function Refresh() {
                     textchecked = ""
                     classtext=""
                 }
-                text += "<li> <input type='checkbox' id='"+i+"' "+textchecked+" onclick='check(this.id);'>" + "<label "+classtext+" onmousedown='textbutton(event,"+i+");'>"+ task[i] +"</label>" + "</li>";
+                text += "<li> <input type='checkbox' id='"+i+"' "+textchecked+" onmousedown='textbutton(event,this.id);'>" + "<label "+classtext+" onmousedown='textbutton(event,"+i+");'>"+ task[i] +"</label>" + "</li>";
             }
         }
         if (modifing){
